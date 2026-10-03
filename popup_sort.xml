@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_item_rounded"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择排序方式"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="12dp"/>
+
+    <TextView android:id="@+id/tvSortNameAsc" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:text="按名称 (正序)" android:textColor="#000000" android:textSize="15sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSortNameDesc" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:text="按名称 (倒序)" android:textColor="#000000" android:textSize="15sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSortSizeAsc" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:text="按大小 (正序)" android:textColor="#000000" android:textSize="15sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSortSizeDesc" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:text="按大小 (倒序)" android:textColor="#000000" android:textSize="15sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSortTimeAsc" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:text="按时间 (正序)" android:textColor="#000000" android:textSize="15sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSortTimeDesc" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center_vertical" android:text="按时间 (倒序)" android:textColor="#000000" android:textSize="15sp" android:background="?android:attr/selectableItemBackground"/>
+</LinearLayout>

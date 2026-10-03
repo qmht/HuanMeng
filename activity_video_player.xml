@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A">
+
+    <!-- 视频画面区域（中间手机框内，这里可以替换为VideoView） -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="280dp"
+            android:layout_height="480dp"
+            android:background="#000000"/>
+    </FrameLayout>
+
+    <!-- 顶部返回与更多按钮 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:background="#33FFFFFF"
+            android:shape="oval"/>
+        <Button
+            android:id="@+id/btn_more"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:text="..."
+            android:textColor="#FFFFFF"
+            android:background="#33FFFFFF"
+            android:shape="oval"/>
+    </RelativeLayout>
+
+    <!-- 右侧竖排小圆点按钮组 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:spacing="12dp">
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="#FFFFFF"
+            android:shape="oval"/>
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="#FFFFFF"
+            android:shape="oval"/>
+        <View
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="#55FFFFFF"
+            android:shape="oval"/>
+    </LinearLayout>
+
+    <!-- 底部播放控制区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 进度条+时间文本 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_current_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:50"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+            <SeekBar
+                android:id="@+id/video_seekbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="12dp"/>
+            <TextView
+                android:id="@+id/tv_total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:56"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- 播放控制按钮行：随机、上一个、播放、下一个、倍速 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:spacing="16dp">
+            <Button
+                android:id="@+id/btn_shuffle"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="⨯"
+                android:textColor="#FFFFFF"
+                android:background="#33FFFFFF"
+                android:shape="oval"/>
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="◀◀"
+                android:textColor="#FFFFFF"
+                android:background="#33FFFFFF"
+                android:shape="oval"/>
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="▶"
+                android:textColor="#FFFFFF"
+                android:background="#2185F5"
+                android:shape="oval"/>
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="▶▶"
+                android:textColor="#FFFFFF"
+                android:background="#33FFFFFF"
+                android:shape="oval"/>
+            <Button
+                android:id="@+id/btn_speed"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="倍速"
+                android:textColor="#FFFFFF"
+                android:background="#33FFFFFF"
+                android:shape="oval"/>
+        </LinearLayout>
+
+        <!-- 音量进度条 -->
+        <SeekBar
+            android:id="@+id/volume_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</FrameLayout>

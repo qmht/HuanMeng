@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 顶部栏（透明） -->
+    <RelativeLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="#00000000">
+        
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/fanhui"
+            android:scaleType="fitCenter"/>
+            
+        <TextView
+            android:id="@+id/tvVideoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="视频标题"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:ellipsize="middle"
+            android:maxWidth="220dp"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"/>
+    </RelativeLayout>
+
+    <!-- 视频画面 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <!-- 手势提示浮层 -->
+    <LinearLayout
+        android:id="@+id/gestureOverlay"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView android:id="@+id/tvGestureType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="音量" android:textColor="#FFFFFF" android:textSize="14sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="4"/>
+        <ProgressBar android:id="@+id/gestureProgressBar" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:max="100" android:progress="50" android:progressTint="#FFFFFF" android:progressBackgroundTint="#55FFFFFF" />
+        <TextView android:id="@+id/tvGestureValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="50%" android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="4"/>
+    </LinearLayout>
+
+    <!-- 底部控制区（透明背景） -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#00000000"
+        android:paddingBottom="20dp">
+
+        <!-- 倍速选择面板 -->
+        <LinearLayout
+            android:id="@+id/llSpeedPanel"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="#80000000"
+            android:padding="4dp"
+            android:visibility="gone">
+            
+            <TextView android:id="@+id/tvSpeed08" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center" android:text="0.8x" android:textColor="#FFFFFF" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvSpeed10" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center" android:text="1.0x" android:textColor="#2185F5" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvSpeed125" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center" android:text="1.25x" android:textColor="#FFFFFF" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvSpeed15" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center" android:text="1.5x" android:textColor="#FFFFFF" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvSpeed20" android:layout_width="match_parent" android:layout_height="40dp" android:gravity="center" android:text="2.0x" android:textColor="#FFFFFF" android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- 进度条行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp">
+            <TextView android:id="@+id/tvCurrent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:textColor="#FFFFFF" android:textSize="13sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="4"/>
+            <SeekBar android:id="@+id/seekBar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginHorizontal="12dp" android:maxHeight="3dp" android:minHeight="3dp" android:progressBackgroundTint="#55FFFFFF" android:progressTint="#FFFFFF" android:thumb="@drawable/seekbar_thumb" android:thumbOffset="0dp" android:splitTrack="false"/>
+            <TextView android:id="@+id/tvDuration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:textColor="#FFFFFF" android:textSize="13sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="4"/>
+        </LinearLayout>
+
+        <!-- 播放按钮行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+            
+            <ImageView android:id="@+id/btnPrev" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:src="@drawable/shangji" android:scaleType="centerInside"/>
+            <ImageView android:id="@+id/btnPlayPause" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:src="@drawable/bofang" android:scaleType="centerInside"/>
+            <ImageView android:id="@+id/btnNext" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:src="@drawable/xiaji" android:scaleType="centerInside"/>
+            <Button android:id="@+id/btnSpeed" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:background="@android:color/transparent" android:text="倍速" android:textColor="#FFFFFF" android:textSize="14sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="4"/>
+            <Button android:id="@+id/btnRotate" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:background="@android:color/transparent" android:text="⛶" android:textColor="#FFFFFF" android:textSize="20sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="4"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

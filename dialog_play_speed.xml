@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放速度"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView android:id="@+id/tvSpeed08" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="0.8x" android:textColor="#000000" android:textSize="16sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSpeed10" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="1.0x" android:textColor="#2185F5" android:textSize="16sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSpeed125" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="1.25x" android:textColor="#000000" android:textSize="16sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSpeed15" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="1.5x" android:textColor="#000000" android:textSize="16sp" android:background="?android:attr/selectableItemBackground"/>
+    <TextView android:id="@+id/tvSpeed20" android:layout_width="match_parent" android:layout_height="48dp" android:gravity="center" android:text="2.0x" android:textColor="#000000" android:textSize="16sp" android:background="?android:attr/selectableItemBackground"/>
+</LinearLayout>
